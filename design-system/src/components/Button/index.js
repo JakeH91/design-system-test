@@ -4,10 +4,8 @@
  */
 
 import React from "react";
-import styled, { css } from "styled-components";
-import { colors } from "../../tokens";
+import styled  from "styled-components";
 import { bool, string } from "prop-types";
-import { StyledIcon } from "../Icon";
 
 const Button = ({ as, label, children, ...props }) => {
   const isIcon = children?.type?.displayName === "Icon";
@@ -35,22 +33,22 @@ const StyledButton = styled.button`
   padding: ${({ isIcon }) => (isIcon ? "12px" : "16px")};
   background-color: ${({ color }) => color};
   opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
-  color: ${colors.background500};
+  color: rgba(255, 255, 255, 1);
   font-size: 14px;
   font-weight: 700;
   width: ${(p) => (p.isStretched ? "100%" : null)};
   ${({ isOutline }) =>
     isOutline &&
     `border-width: 1px;
-     border-color: ${colors.onSurface100}; 
+     border-color: rgba(221, 227, 235, 1); 
      background-color: transparent;
-     color: ${colors.onBackground500};
+     color: rgba(12, 17, 24, 1);
   `};
   ${({ isBorderless }) =>
     isBorderless &&
     `
      background-color: transparent;
-     color: ${colors.primary500};
+     color: rgba(241, 82, 35, 1);
      padding: 0;
   `};
 `;
@@ -65,7 +63,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  color: colors.primary500,
+  color: "rgba(241, 82, 35, 1)",
 };
 
 export default Button;

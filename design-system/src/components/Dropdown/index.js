@@ -1,23 +1,18 @@
 import { arrayOf, string, shape } from "prop-types";
 import React from "react";
 import styled from "styled-components";
-import Icon, { icons } from "../Icon";
+import Icon from "../Icon";
 import {
   Listbox,
-  ListboxInput,
-  ListboxButton,
-  ListboxPopover,
-  ListboxList,
   ListboxOption,
-  ListboxArrow,
 } from "@reach/listbox";
 import "@reach/listbox/styles.css";
 
-/* Select
+/* Dropdown
  *
  * A dropdown list of values.
  */
-const Select = ({ defaultValue, options, ...props }) => {
+const Dropdown = ({ defaultValue, options, ...props }) => {
   if (!options) {
     return null;
   }
@@ -36,7 +31,7 @@ const Select = ({ defaultValue, options, ...props }) => {
   };
 
   return (
-    <StyledSelect
+    <StyledDropdown
       arrow={<Icon name="chevronDown" width={10} height={10} />}
       {...props}
     >
@@ -48,12 +43,12 @@ const Select = ({ defaultValue, options, ...props }) => {
         )}
         {options && renderOptions(options)}
       </>
-    </StyledSelect>
+    </StyledDropdown>
   );
 };
 
-Select.propTypes = {
-  /* text which will be always displayed by default. If omitted, first value is selected */
+Dropdown.propTypes = {
+  /* text which will be always displayed by default. If omitted, first value is Dropdowned */
   defaultValue: string,
   options: arrayOf(
     shape({
@@ -63,15 +58,15 @@ Select.propTypes = {
   ).isRequired,
 };
 
-export const StyledSelect = styled(Listbox)`
+export const StyledDropdown = styled(Listbox)`
   > [data-reach-listbox-button] {
     padding: 8px 16px;
     font-family: "DM Sans";
     line-height: 24px;
     font-weight: bold;
-    border-color: "rgba(188, 199, 213, 1)";
+    border-color: rgba(188, 199, 213, 1);
     border-radius: 12px;
-    color: "rgba(12, 17, 24, 1)";
+    color: rgba(12, 17, 24, 1);
     position: relative;
     outline: none;
     align-items: baseline;
@@ -83,4 +78,4 @@ export const StyledSelect = styled(Listbox)`
   }
 `;
 
-export default Select;
+export default Dropdown;
