@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { string, number } from "prop-types";
 
 import { ReactComponent as SettingsIcon } from "./svg/setting.svg";
@@ -10,6 +9,7 @@ import { ReactComponent as chevronDownIcon } from "./svg/chevronDown.svg";
 import { ReactComponent as viewGridIcon } from "./svg/viewGrid.svg";
 import { ReactComponent as viewItemIcon } from "./svg/viewItem.svg";
 import { ReactComponent as filterIcon } from "./svg/filter.svg";
+
 /* Icon
  *
  * SVG icons wrapper
