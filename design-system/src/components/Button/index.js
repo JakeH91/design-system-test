@@ -4,8 +4,9 @@
  */
 
 import React from "react";
-import styled  from "styled-components";
+import styled from "styled-components";
 import { bool, string } from "prop-types";
+import { sizes, colors, typography } from "../../tokens";
 
 const Button = ({ as, label, children, ...props }) => {
   const isIcon = children?.type?.displayName === "Icon";
@@ -23,32 +24,32 @@ const StyledButton = styled.button`
   cursor: pointer;
   outline: none;
   box-sizing: border-box;
-  line-height: 24px;
+  line-height: ${sizes.size2xl};
   position: relative;
   user-select: none;
   text-decoration: none;
   border-width: 0;
   border-style: solid;
   border-radius: 1rem;
-  padding: ${({ isIcon }) => (isIcon ? "12px" : "16px")};
+  padding: ${({ isIcon }) => (isIcon ? sizes.sizemd : sizes.sizelg)};
   background-color: ${({ color }) => color};
   opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
-  color: rgba(255, 255, 255, 1);
-  font-size: 14px;
-  font-weight: 700;
+  color: ${colors.background500};
+  font-size: ${typography.paragraph3FontSize};
+  font-weight: ${typography.headline2FontWeight};
   width: ${(p) => (p.isStretched ? "100%" : null)};
   ${({ isOutline }) =>
     isOutline &&
     `border-width: 1px;
-     border-color: rgba(221, 227, 235, 1); 
+     border-color: ${colors.onSurface100}; 
      background-color: transparent;
-     color: rgba(12, 17, 24, 1);
+     color: ${colors.onBackground500};
   `};
   ${({ isBorderless }) =>
     isBorderless &&
     `
      background-color: transparent;
-     color: rgba(241, 82, 35, 1);
+     color: ${colors.primary500};
      padding: 0;
   `};
 `;
@@ -63,7 +64,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  color: "rgba(241, 82, 35, 1)",
+  color: colors.primary500,
 };
 
 export default Button;

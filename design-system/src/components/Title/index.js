@@ -1,6 +1,7 @@
 import { string } from "prop-types";
 import React from "react";
 import styled from "styled-components";
+import { sizes, typography } from "../../tokens";
 
 /*
  * Title
@@ -15,14 +16,14 @@ const Title = ({ size = "big", ...props }) => {
 
 const StyledTitleBig = styled.h1`
   margin-bottom: 40px;
-  letter-spacing: -1.6px;
+  letter-spacing: ${typography.headline1LetterSpacing};
   display: inline-flex;
   justify-content: space-between;
 `;
 
 const StyledTitleSmall = styled.h2`
-  margin-bottom: 16px;
-  letter-spacing: -0.8px;
+  margin-bottom: ${sizes.sizelg};
+  letter-spacing: ${typography.headline2LetterSpacing};
   display: inline-flex;
   justify-content: space-between;
 `;

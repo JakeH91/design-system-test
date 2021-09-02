@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Icon from "../Icon"
-import Button from "../Button"
+import Icon from "../Icon";
+import Button from "../Button";
+import { sizes, colors } from "../../tokens";
 
 /* ProductNav
  *
@@ -30,7 +31,7 @@ const ProductNav = () => {
 const StyledProductNav = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: ${sizes.size2xl};
 `;
 
 const StyledIconWrapper = styled.div`
@@ -41,7 +42,7 @@ const StyledIconWrapper = styled.div`
 const StyledButton = styled(Button)`
   padding: 0;
   border: 0;
-  margin: 0 8px;
+  margin: 0 ${sizes.sizebase};
   &:last-child {
     margin-right: 0;
   }
@@ -49,9 +50,9 @@ const StyledButton = styled(Button)`
 
 const StyledBorder = styled.div`
   width: 1px;
-  height: 16px;
-  background-color: rgba(221, 227, 235, 1);
-  margin: 0 8px;
+  height: ${sizes.sizelg};
+  background-color: ${colors.onSurface100};
+  margin: 0 ${sizes.sizebase};
 `;
 
 export default ProductNav;
