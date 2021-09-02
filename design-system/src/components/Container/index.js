@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { colors } from "../../tokens";
 import { string, node, arrayOf, oneOf } from "prop-types";
 import { sizes, colors } from "../../tokens";
 
