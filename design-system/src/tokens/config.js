@@ -26,12 +26,28 @@ module.exports = {
       transforms: ["size/px", "name/ti/camel"],
       /* We split tokens into separate files - it will be easier to use them this way */
       files: [
-        /* Filter and extract typography tokens */
+        /* Filter and extract size tokens*/
         {
-          destination: "typography.js",
+          destination: "sizes.js",
           format: "javascript/es6",
           filter: function (prop) {
-            return prop.path[0] === "font";
+            return prop.path[0] === "sizes";
+          },
+        },
+        /* Filter and extract spacing tokens*/
+        {
+          destination: "spacing.js",
+          format: "javascript/es6",
+          filter: function (prop) {
+            return prop.path[0] === "spacing";
+          },
+        },
+        /* Filter and extract radii tokens*/
+        {
+          destination: "radii.js",
+          format: "javascript/es6",
+          filter: function (prop) {
+            return prop.path[0] === "radii";
           },
         },
         /* Filter and extract color tokens*/
@@ -40,6 +56,22 @@ module.exports = {
           format: "javascript/es6",
           filter: {
             type: "color",
+          },
+        },
+        /* Filter and extract typography tokens */
+        {
+          destination: "typography.js",
+          format: "javascript/es6",
+          filter: function (prop) {
+            return prop.path[0] === "font";
+          },
+        },
+        /* Filter and extract effect tokens*/
+        {
+          destination: "effects.js",
+          format: "javascript/es6",
+          filter: function (prop) {
+            return prop.path[0] === "effect";
           },
         },
       ],
