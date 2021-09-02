@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Button from "../Button";
 import Icon from "../Icon";
-import {  string, oneOf } from "prop-types";
-import {  typography as t } from "tokens";
+import { string, oneOf } from "prop-types";
+import { sizes, typography as t, colors } from "tokens";
 
 /* Product Item
  *
@@ -71,9 +71,9 @@ const StyledProductItemImage = styled.img`
   max-width: 100%;
   max-height: 100%;
   margin-bottom: ${({ size }) =>
-    size === "big" ? "24px" : size === "small" ? "0px" : "16px"};
+    size === "big" ? sizes.size2xl : size === "small" ? "0px" : sizes.sizelg};
   display: block;
-  border-radius: 32px;
+  border-radius: ${sizes.size3xl};
 `;
 
 const StyledButton = styled(Button)`
@@ -81,7 +81,7 @@ const StyledButton = styled(Button)`
   top: 0;
   left: 0;
   z-index: 1;
-  margin: 24px;
+  margin: ${sizes.size2xl};
 `;
 
 const StyledProductItemInfo = styled.div`
@@ -91,13 +91,13 @@ const StyledProductItemInfo = styled.div`
     size == "small" &&
     `
      flex-grow: 1;
-     margin-left: 16px;
+     margin-left: ${sizes.sizelg};
      align-content: flex-start;
      max-width: 60%;`}
 `;
 
 const StyledProductItemDescription = styled.p`
-  margin-bottom: 8px;
+  margin-bottom: ${sizes.sizebase};
   opacity: 0.6;
   ${({ size }) => size === "small" && `order: 5;`}
 `;
@@ -128,7 +128,7 @@ const StyledProductItemName = styled.h2`
         font-weight: ${t.headline4FontWeight};
         font-style: ${t.headline4FontStyle};
         letter-spacing: ${t.headline4LetterSpacing};
-        margin-bottom: 8px;
+        margin-bottom: ${sizes.sizebase};
     `;
     } else {
       return `
@@ -141,32 +141,32 @@ const StyledProductItemName = styled.h2`
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
-        padding-right: 16px;
+        padding-right: ${sizes.sizelg};
     `;
     }
   }}
 `;
 
 const StyledProductItemPrice = styled.p`
-  color: rgba(241, 82, 35, 1);
-  margin-top: 8px;
+  color: ${colors.primary500};
+  margin-top: ${sizes.sizebase};
   font-weight: 500;
   ${({ size }) => {
     if (size === "big") {
       return `
-        font-family: "DM Sans";
-        font-size: 24px;
-        line-height: 34px;
-        font-weight: 700;
-        letter-spacing: -0.8px;
-        color: rgba(241, 82, 35, 1);
-        margin-top: 16px;`;
+        font-family: ${t.headline1FontFamily};
+        font-size: ${sizes.size2xl};
+        line-height: ${t.headline2LineHeight};
+        font-weight: ${t.headline2FontWeight};
+        letter-spacing: ${t.headline2LetterSpacing};
+        color: ${colors.primary500};
+        margin-top: ${sizes.sizelg};`;
     } else if (size === "small") {
       return `
-        color: rgba(12, 17, 24, 1); 
+        color: ${colors.onBackground500}; 
         margin-top: 0; 
         margin-left: auto; 
-        font-weight: bold;`;
+        font-weight: ${t.headline1FontStyleOld};`;
     }
   }}
 `;

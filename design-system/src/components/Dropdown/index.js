@@ -1,11 +1,9 @@
 import { arrayOf, string, shape } from "prop-types";
 import React from "react";
 import styled from "styled-components";
+import { sizes, colors, typography } from "../../tokens";
 import Icon from "../Icon";
-import {
-  Listbox,
-  ListboxOption,
-} from "@reach/listbox";
+import { Listbox, ListboxOption } from "@reach/listbox";
 import "@reach/listbox/styles.css";
 
 /* Dropdown
@@ -60,13 +58,13 @@ Dropdown.propTypes = {
 
 export const StyledDropdown = styled(Listbox)`
   > [data-reach-listbox-button] {
-    padding: 8px 16px;
-    font-family: "DM Sans";
-    line-height: 24px;
-    font-weight: bold;
-    border-color: rgba(188, 199, 213, 1);
-    border-radius: 12px;
-    color: rgba(12, 17, 24, 1);
+    padding: ${sizes.sizebase} ${sizes.sizelg};
+    font-family: ${typography.headline1FontFamily};
+    line-height: ${sizes.size2xl};
+    font-weight: ${typography.headline1FontStyleOld};
+    border-color: ${colors.onSurface200};
+    border-radius: ${sizes.sizemd};
+    color: ${colors.onBackground500};
     position: relative;
     outline: none;
     align-items: baseline;

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { string, shape, arrayOf } from "prop-types";
+import { sizes, typography, colors } from "../../tokens";
 
 /* SummaryTable
  *
@@ -48,19 +49,19 @@ SummaryTable.propTypes = {
 const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr auto;
-  row-gap: 16px;
+  row-gap: ${sizes.sizelg};
 `;
 
 const StyledBorder = styled.div`
   width: 100%;
   height: 1px;
-  background-color: rgba(0, 0, 0, 0.1);
-  margin: 32px 0;
+  background-color: ${colors.shadowDefault0Color};
+  margin: ${sizes.size3xl} 0;
 `;
 
 const StyledItemName = styled.p`
-  font-size: 18px;
-  line-height: 28px;
+  font-size: ${typography.paragraph1FontSize};
+  line-height: ${typography.paragraph1LineHeight};
 `;
 
 const StyledHeading = styled.h2`
@@ -68,22 +69,22 @@ const StyledHeading = styled.h2`
 `;
 
 const StyledPrice = styled.div`
-  font-family: "DM Sans";
-  font-size: 14px;
-  font-weight: 700;
-  font-style: normal;
-  line-height: 24px;
-  letter-spacing: -0.3px;
+  font-family: ${typography.paragraph3FontFamily};
+  font-size: ${typography.paragraph3FontSize};
+  font-weight: ${typography.headline1FontWeight};
+  font-style: ${typography.paragraph3FontStyle};
+  line-height: ${typography.paragraph3LineHeight};
+  letter-spacing: ${typography.paragraph3LetterSpacing};
   text-align: right;
 `;
 
 const StyledTotal = styled.div`
-  font-family: "DM Sans";
-  font-size: 18px;
-  font-weight: 700;
-  font-style: normal;
-  line-height: 28px;
-  letter-spacing: -0.4px;
+  font-family: ${typography.headline4FontFamily};
+  font-size: ${typography.headline4FontSize};
+  font-weight: ${typography.headline4FontWeight};
+  font-style: ${typography.headline4FontStyle};
+  line-height: ${typography.headline4LineHeight};
+  letter-spacing: ${typography.headline4LetterSpacing};
   text-align: right;
 `;
 

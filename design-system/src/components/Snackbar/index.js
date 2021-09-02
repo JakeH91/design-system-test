@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../Button";
+import { sizes, effects } from "../../tokens";
 
 /* Snackbar
  *
@@ -22,12 +23,16 @@ const Snackbar = ({ as }) => {
 
 export const StyledSnackbar = styled.div`
   display: flex;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1),
-    0px 1px 3px 0px rgba(0, 0, 0, 0.06);
-  padding: 20px 24px;
+  box-shadow: ${effects.shadowDefault0OffsetX} ${effects.shadowDefault0OffsetY}
+      ${effects.shadowDefault0Radius} ${effects.shadowDefault0Spread}
+      ${effects.shadowDefault0Color},
+    ${effects.shadowDefault1OffsetX} ${effects.shadowDefault1OffsetY}
+      ${effects.shadowDefault1Radius} ${effects.shadowDefault1Spread}
+      ${effects.shadowDefault1Color};
+  padding: ${sizes.sizexl} ${sizes.size2xl};
   justify-content: space-between;
-  border-radius: 16px;
-  margin-top: 24px;
+  border-radius: ${sizes.sizelg};
+  margin-top: ${sizes.size2xl};
 `;
 
 export default Snackbar;

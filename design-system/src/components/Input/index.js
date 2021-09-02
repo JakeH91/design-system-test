@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Title from "../Title";
 import Button from "../Button";
 import { string } from "prop-types";
+import { sizes, typography, colors } from "../../tokens";
 
 /* Input
  *
@@ -42,12 +43,12 @@ const StyledTextarea = styled.textarea`
   background: transparent;
   border: none;
   opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
-  font-family: "DM Sans";
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: -0.3px;
-  color: rgba(12, 17, 24, 1);
+  font-family: ${typography.headline1FontFamily};
+  font-size: ${typography.paragraph3FontSize};
+  font-weight: ${typography.paragraph3FontWeight};
+  line-height: ${sizes.size2xl};
+  letter-spacing: ${typography.paragraph3LetterSpacing};
+  color: ${colors.onBackground500};
 `;
 
 const StyledTitleContainer = styled.div`

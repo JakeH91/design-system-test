@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { node, string } from "prop-types";
+import { sizes } from "../../tokens";
 
 /* Navigation
  *
@@ -30,14 +31,14 @@ const StyledNavigation = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
-  padding-top: 24px;
+  padding-top: ${sizes.size2xl};
 `;
 
 const StyledTitle = styled.div`
   flex-grow: 2;
   display: flex;
   align-items: center;
-  margin-left: 24px;
+  margin-left: ${sizes.size2xl};
 `;
 
 export default Navigation;
